@@ -13,7 +13,7 @@
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
-            "environmentName": "Dev",
+            "environmentName": "Sandbox",
             "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": "All",
