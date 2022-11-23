@@ -46,7 +46,7 @@ page 70200 PurchaseOrderDialog
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean;
     var
-        // createPurchaseOrder: Codeunit CreatePurchaseOrderFromAPI;
+        createPurchaseOrder: Codeunit CreatePurchaseOrderFromAPI;
         http_Cleint: HttpClient;
         http_ResponseMsg: HttpResponseMessage;
         response: Text;
@@ -55,9 +55,9 @@ page 70200 PurchaseOrderDialog
         if CloseAction = Action::OK then begin
             if (http_Cleint.Get('https://jsonplaceholder.typicode.com/photos', http_ResponseMsg)) then begin
                 http_ResponseMsg.Content.ReadAs(response);
-                Message(response);
-                // createPurchaseOrder.CreatePurchaseOrderFromAPI(response, SupplierNo, Item, NoOfPO);
-                // createPurchaseOrder.CreatePurchaseOrderFromAPI2(response, SupplierNo, Item, NoOfPO);
+                // Message(response);
+                // createPurchaseOrder.CreateOrder(response, SupplierNo, Item, NoOfPO);
+                createPurchaseOrder.CreateOrder2(response, SupplierNo, Item, NoOfPO);
 
             end;
         end
